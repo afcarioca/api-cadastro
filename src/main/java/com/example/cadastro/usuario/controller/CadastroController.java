@@ -29,7 +29,7 @@ public class CadastroController {
 		if (isExistente(usuarioFormDto)) {
 			return new ResponseEntity<UsuarioInfoDto>(new UsuarioInfoDto(usuarioFormDto), HttpStatus.BAD_REQUEST);
 		} else {
-
+			
 			this.usuarioRepository.save(new Usuario(usuarioFormDto));
 			return new ResponseEntity<UsuarioInfoDto>(new UsuarioInfoDto(usuarioFormDto), HttpStatus.OK);
 
